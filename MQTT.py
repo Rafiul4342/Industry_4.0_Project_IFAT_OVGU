@@ -24,6 +24,7 @@ def on_message(client, userdata,msg):
 
 broker ="172.0.0.1"
 client = mqtt.Client("Call_For_Proposal")
+Client1 = mqtt.Client("proposal")
 print("connection to broker :broker", broker)
 
 client.on_connect =no_connect
@@ -34,7 +35,7 @@ client.on_message= on_message
 client.connect("localhost", 1883, 60)
 client.loop_start()
 client.subscribe("hi")
-client.publish("hi", "hi")
+client.publish("hi", "hello")
 
 #client.publish("hello", "i am fine")
 
